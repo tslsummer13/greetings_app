@@ -1,0 +1,22 @@
+<style>
+  body {
+    color: <%= @favorite_color %>;
+  }
+</style>
+
+<h1>Sign In</h1>
+<p>
+  Signed in as <%= @name %>.
+  <%#= link_to "Sign Out", "http://localhost:3000/sessions", :method => "delete" %>
+  <%= link_to "Sign Out", session_url, :method => "delete" %>
+</p>
+
+<%= form_tag sessions_url do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+
+  <%= label_tag :color %>
+  <%= text_field_tag :color %>
+
+  <%= submit_tag "Sign In" %>
+<% end %>
